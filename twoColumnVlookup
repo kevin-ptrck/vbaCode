@@ -1,0 +1,19 @@
+Public Function getRoutedTime(rng As range, sItem As String) As Double
+
+    Dim r As Variant
+    Dim cell As Variant
+    
+    For Each r In rng.Rows
+        If CStr(r.Cells(1).Value) = sItem Then
+            getRoutedTime = r.Cells(3)
+            Exit Function
+        ElseIf CStr(r.Cells(2).Value) = sItem Then
+            getRoutedTime = r.Cells(3)
+            Exit Function
+        Else
+            getRoutedTime = 0
+        End If
+        
+    Next r
+    
+End Function
